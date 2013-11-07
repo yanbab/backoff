@@ -1,0 +1,13 @@
+{
+    "schema": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "required": true
+      },
+      "age": {
+        "type": 'number',
+        "title": 'Age'
+      }
+    }
+}

@@ -1,0 +1,51 @@
+/*
+ *
+ * Print stylesheet 
+ *
+ */
+ 
+* {
+  font-family: arial, sans-serif;
+  font-size : 12px;
+}
+
+a {
+  color : black;
+  text-decoration : none;
+}
+
+h2 {
+  background-color : #555;
+  color : white;
+  font-size : 120%;
+}
+h3 {
+  font-size : 100%;
+}
+
+#header, #sidebar, #toolbar div, #actionbar, th.action *, table.list input {
+ display : none;
+}
+
+#content, #main {
+  margin : 0;
+  padding : 0;
+}
+
+th {
+  text-align: left;
+}
+
+table.list {
+  border-collapse:collapse;
+}
+
+table.list td, table.list th{
+  border : solid #ccc 1px;
+}
+
+#footer {
+  margin-top : 2em;
+  color : #aaa;
+}
+

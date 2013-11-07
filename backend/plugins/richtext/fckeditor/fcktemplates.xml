@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the sample templates definitions file. It makes the "templates"
+ * command completely customizable.
+ *
+ * See FCKConfig.TemplatesXmlPath in the configuration file.
+-->
+<Templates imagesBasePath="fck_template/images/">
+	<Template title="Page standard" image="template1.gif">
+		<Description>Montre les styles utilisables.</Description>
+		<Html>
+			<![CDATA[
+			<h3>Titre</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4>Sous-titre</h4>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+<h4>Liste de liens</h4>
+<ul>
+    <li><a href="http://google.com">Google</a></li>
+    <li><a href="http://yahoo.com">Yahoo</a></li>
+    <li>etc...</li>
+</ul>
+<div>
+<h4>Styles</h4>
+<div><strong>Gras, </strong><em>Italique</em><em>,</em> <strike>barr&eacute;</strike>, <sup>indice,</sup> <small>petit</small>, normal, <big>grand</big></div>
+<div>&nbsp;</div>
+<table width="100%" cellspacing="1" cellpadding="1" border="1" style="border-collapse: collapse;" summary="R&eacute;sum&eacute;">
+    <caption>Titre du tableau</caption>
+    <tbody>
+        <tr>
+            <td>une</td>
+            <td>grande</td>
+            <td>table</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+			
+			]]>
+		</Html>
+	</Template>
+	<Template title="Newsletter" image="template1.gif">
+		<Description>Modèle à utiliser pour les newsletter.</Description>
+		<Html>
+			<![CDATA[
+<base href="http://villaperrotte.fr/" />
+
+<style type="text/css">
+  body,td,div {
+    font-family : sans-serif, verdana, arial;
+    font-size : 12px;
+    color : #333;
+  }
+
+  body {
+    background  : #ddd;
+    margin : 20px;
+  }
+
+  a img {
+    border : none;
+  }
+
+  .main {
+    background : white;
+    padding : 20px;
+    margin:20px;
+    width : 500px;
+  }
+  .wrap {
+    width : 540px;
+    margin : auto;
+  }
+  small {
+    padding-bottom :10px;
+  }
+
+  h1 {
+    border-left:25px solid #EA1F20;
+    color:#7F7772;
+    letter-spacing:1px;
+    margin:25px 0;
+    padding-left:5px;
+    font-size:136%;
+  }
+
+  h2 {
+    border-left:15px solid #EA1F20;
+    color:#7F7772;
+    letter-spacing:1px;
+    margin-bottom:25px;
+    padding-left:5px;
+    font-size:107%;
+    margin-top:0;
+  }
+</style>
+<div class="wrap">
+<center> 	<small style="color : #888"> 	Vous recevez cet email car vous &ecirc;tes inscrit &agrave; la newsletter de la Villa Perrotte. <br />
+Des difficult&eacute;s &agrave; lire cet email ? <a href="http://www.villaperrotte.fr/newsletter/view/">Cliquez ici.</a>Vous souhaitez vous d&eacute;sinscrire ? <a href="http://www.villaperrotte.fr/newsletter/unsubscribe/">Cliquez ici.</a> 	</small> <br/></center>
+<div class="main">
+<div>
+<a href="http://www.villaperrotte.fr/"><img width="300" height="100" border="0" src="http://villaperrotte.fr/themes/villaperrotte/images/logo_villa_perrotte.gif" alt="" /></a>
+</div>
+<div style="margin-top:10px;"><small style="color : #888;">9, rue Jules Ferry 76200 Dieppe - tél. 02 35 86 94 18 <br> Ouvert les jeudi, vendredi et samedi de 15h à 19h,<br> le dimanche de 15h à 18h.</small></div>
+<h1>Edition de juin 2009</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2>Lorem ipsum</h2>
+<p><img width="90" height="90" border="1" align="left" src="http://villaperrotte.fr/documents/images/agenda/thumbnails/Nathalie-Letulle-KEROSENE-CRISIS.jpg" style="margin: 0pt 10px 5px 0pt; padding: 1px;" alt="" />Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+</div>
+
+</div>
+			]]>
+		</Html>
+	</Template>
+</Templates>

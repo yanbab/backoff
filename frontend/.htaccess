@@ -1,0 +1,13 @@
+# Apache settings
+
+# Allow php short tag
+php_value short_open_tag 1
+
+# Rewrite URLs
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Change this to install location
+RewriteBase /Public/backoff/frontend/

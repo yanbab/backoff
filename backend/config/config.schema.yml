@@ -1,0 +1,304 @@
+title: Backoff Admin
+theme: tunes
+lang: en
+auth: db
+auth_param:
+  table: users
+  username: username
+  password: password
+  admin: admin
+  encrypt: md5
+pages: 
+  title: 
+    type: separator 
+    name: Site
+    description: Site settings
+  pages:
+    name: Pages
+    table: pages
+    order: position
+    description: Edit site content
+    fields: 
+      name: 
+        id: name
+        name: Name
+        type: text
+        format: "<strong>%s</strong>"
+      id_module:
+        id: id_module
+        name: Type
+        type: select
+        table:
+            name: pages_modules
+            field: name
+      url: 
+        id: url
+        name: Adresse de la page
+        type: text
+        description : alphanumeric only. Leave empty for home page.
+        attributes:
+            size:18
+        --format:"<a class='_blank' href='/../%s'>http://www.lecafeducommerce.com/%s</a>"
+        --format_edit:"<b>http://www.lecafeducommerce.com/</b>%s<b></b>"
+        edit_only:true            
+      status:
+        id: status
+        name: Publish
+        type: checkbox
+        description : Display in menu
+        default: 1
+      position: 
+        id: position
+        name: Position
+        type: number
+        default: 0
+        rules: numeric
+        rules_msg: enter a numeric value
+        description : Menu display order
+      content:
+        id: content
+        name: Page content
+        type: richtext
+        edit_only : true
+        options:
+          width: 800px
+          css: "../frontend/bower_components/bootstrap-css/css/bootstrap.min.css"
+  config:
+    name : Settings
+    table:config
+    no_delete : true
+    fields:
+      name:
+        id: name
+        name: Setting
+        format: "<strong>%s</strong>"
+        type: text
+        read_only: true
+      description:
+        id: description
+        name: Description
+        type: textarea
+        edit_only: true
+        read_only: true
+      value:
+        id: value
+        name: Value
+        type: textarea
+  users:
+    name : Users
+    table: users
+    fields:
+      username:
+        id: username
+        name: User name
+        format : <strong>%s</strong>
+        type: text
+      email:
+        id: email
+        name: Email
+        format : '<a href="mailto:%s">%s</a>'
+        type: text
+      admin:
+        id: admin
+        name: Admin
+        description: Administrator user
+        type: checkbox
+        value: 1
+      password:
+        id: password
+        name: Password
+        type: password
+  rubriques: 
+    type: separator 
+    name: Sections
+    description:        
+  galery:
+    name: Galery
+    table: galery
+    description: Image gallery
+    no_create: 
+    permissions: edit|delete|create
+    show_in : list|edit
+    fields: 
+      thumbnail:
+        id: thumbnail
+        name: Thumbnail
+        type: file
+        description: will be resized
+        options:
+          folder: '../frontend/files/images/thumbnails/'
+          resize_width: 120
+      image:
+        id: image
+        name: Image
+        type: file
+        edit_only: true
+        description: will not be resized
+        options:
+          folder: '../frontend/files/images/'
+      title: 
+        id: title
+        name: Titre
+        type: text
+        format: "<strong>%s</strong>"
+      id_page:
+        id: id_page
+        name: Page
+        type: select
+        table:
+            name: pages
+            field: name
+      status:
+        id: status
+        name: Publish
+        type: checkbox
+        description : Publish picture
+        value: checked
+  contacts:
+    type: module
+    name: Contacts
+    table: contacts
+    key: id
+    filter: 
+    order: date
+    per_page: 
+    description: Demandes de contact via le site
+    fields: 
+      subject: 
+        id: subject
+        name: Sujet
+        type: text
+      from: 
+        id: from
+        name: De
+        type: text
+      to: 
+        id: to
+        name: À
+        type: text
+      message: 
+        id: message
+        name: Message
+        type: textarea
+      date: 
+        id: date
+        name: Date
+        type: datetime
+  newsletter:
+    type: separator
+    name: Newsletter
+  newsletter_emails:
+    type: module
+    name: Subscribers
+    table: newsletter_emails
+    fields: 
+      email: 
+        id: email
+        name: Email
+        type: text
+      date: 
+        id: date
+        name: Date
+        type: datetime
+      active: 
+        id: active
+        name: Active
+        type: checkbox
+        description: Unchecked if user is unsubscribed
+  newsletter_letters:
+    type: module
+    name: Letters
+    table: newsletter_letters
+    fields:
+      subject:
+        id: subject
+        name: Subject
+        type: text
+        rules: required
+      from_name:
+        id: from_name
+        name: From (name)
+        type: text
+        rules: required
+        value : Contact
+      from_email:
+        id: from_email
+        name: From (email)
+        type: text
+        value: contact@domain.com
+        rules: email
+        rules_msg : Ceci n'est pas une adresse email valide (du type moi@example.com)
+      body_html: 
+        id: body_html
+        name: Message (html)
+        type: richtext
+        description : 
+        edit_only: true
+        options : 
+          css: _
+      body_text: 
+        id: body_text
+        name: Message (text)
+        type: textarea
+        edit_only: true
+        attributes:
+          cols: 80
+          rows: 10
+        description: 
+  newsletter_campains:
+    type: module
+    module: list
+    name: Campaigns
+    table: newsletter_campains
+    fields: 
+      id_letter: 
+        id: id_letter
+        name: Newsletter
+        type: select
+        rules: required
+        rules_msg: Please select a newsletter
+        table:
+            name: newsletter_letters
+            field: subject
+      active:
+        id: active
+        rules: required
+        rules_msg: Please check
+        name: Confirmation 
+        description: Really send newsletter
+        type: newsletter
+        edit_only: true
+        options : 
+          table_emails: newsletter_emails
+          table_letters: newsletter_letters
+      sent:
+        id: sent
+        no_edit: true        
+        name: Mails sent
+        type: number
+      date: 
+        id: date
+        no_edit: true
+        name: Date
+        type: datetime
+  data:
+    type: separator
+    name: Data
+  countries:
+    type: module
+    name: Countries
+    table: countries
+    per_page:2000
+    fields:
+      country_code:
+        id: country_code
+        name: Country code
+        type: text
+        rules: required
+        attributes:
+          size:3
+      country_name:
+        id: country_name
+        name: Country name
+        type: text
+        rules: required

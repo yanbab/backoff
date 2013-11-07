@@ -1,0 +1,14 @@
+/*
+ *
+ * IE6- hacks 
+ *
+ */
+
+#header, #sidebar {
+	position:absolute;
+	z-index:10;
+}
+#sidebar {	
+  z-index:1;
+}
+
