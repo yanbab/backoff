@@ -15,3 +15,4 @@ $_CONFIG['email_from'] = "webmaster@test.com";
 
 // Time zone
 date_default_timezone_set('UTC');
+ini_set('short_open_tag', 1);

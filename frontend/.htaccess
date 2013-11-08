@@ -1,6 +1,7 @@
 # Apache settings
 
 # Allow php short tag
+# fails on some servers (gandi)
 php_value short_open_tag 1
 
 # Rewrite URLs

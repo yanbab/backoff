@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title><?=$config['site_title']?></title>
+    <title><?php echo $config['site_title'];?></title>
     <base href="/Public/backoff/frontend/"></base>
-    <meta name="keywords" content="<?=$config['site_keywords']?>" />
-    <meta name="description" content="<?=$config['site_description']?>" />
+    <meta name="keywords" content="<?php echo $config['site_keywords'];?>" />
+    <meta name="description" content="<?php echo $config['site_description'];?>" />
     <link href="bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet" />
     <style>
 
@@ -112,7 +112,7 @@
         <ul class="nav nav-pills pull-right">
           <?php foreach($pages as $p) : ?>
             <?php if($p['status']) : ?>
-              <li  <?php if($p['url']==$page['url']): ?>class="active"<?php endif;?> ><a href="./<?=$p['url']?>"><?=$p['name']?></a></li>
+              <li  <?php if($p['url']==$page['url']): ?>class="active"<?php endif;?> ><a href="./<?=$p['url']?>"><?echo $p['name'];?></a></li>
           <?php endif ; ?>        
         <?php endforeach; ?>  
         </ul>

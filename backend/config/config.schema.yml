@@ -8,11 +8,11 @@ auth_param:
   password: password
   admin: admin
   encrypt: md5
-pages: 
+content: 
   title: 
     type: separator 
-    name: Site
-    description: Site settings
+    name: Content
+    description: Site content
   pages:
     name: Pages
     table: pages
@@ -38,8 +38,8 @@ pages:
         description : alphanumeric only. Leave empty for home page.
         attributes:
             size:18
-        --format:"<a class='_blank' href='/../%s'>http://www.lecafeducommerce.com/%s</a>"
-        --format_edit:"<b>http://www.lecafeducommerce.com/</b>%s<b></b>"
+        --format:"<a class='_blank' href='../frontend/%s'>.../frontend/%s</a>"
+        --format_edit:"<b>../frontend/</b>%s<b></b>"
         edit_only:true            
       status:
         id: status
@@ -57,63 +57,14 @@ pages:
         description : Menu display order
       content:
         id: content
-        name: Page content
+        name: Content
         type: richtext
         edit_only : true
         options:
           width: 800px
           css: "../frontend/bower_components/bootstrap-css/css/bootstrap.min.css"
-  config:
-    name : Settings
-    table:config
-    no_delete : true
-    fields:
-      name:
-        id: name
-        name: Setting
-        format: "<strong>%s</strong>"
-        type: text
-        read_only: true
-      description:
-        id: description
-        name: Description
-        type: textarea
-        edit_only: true
-        read_only: true
-      value:
-        id: value
-        name: Value
-        type: textarea
-  users:
-    name : Users
-    table: users
-    fields:
-      username:
-        id: username
-        name: User name
-        format : <strong>%s</strong>
-        type: text
-      email:
-        id: email
-        name: Email
-        format : '<a href="mailto:%s">%s</a>'
-        type: text
-      admin:
-        id: admin
-        name: Admin
-        description: Administrator user
-        type: checkbox
-        value: 1
-      password:
-        id: password
-        name: Password
-        type: password
-  rubriques: 
-    type: separator 
-    name: Sections
-    description:        
   galery:
-    name: Galery
+    name: Images
     table: galery
     description: Image gallery
     no_create: 
@@ -154,6 +105,55 @@ pages:
         type: checkbox
         description : Publish picture
         value: checked
+  config:
+    name : Settings
+    table:config
+    no_delete : true
+    fields:
+      name:
+        id: name
+        name: Setting
+        format: <strong>%s</strong>
+        type: text
+        read_only: true
+      description:
+        id: description
+        name: Description
+        type: textarea
+        edit_only: true
+        read_only: true
+      value:
+        id: value
+        name: Value
+        type: textarea
+  users:
+    name : Users
+    table: users
+    fields:
+      username:
+        id: username
+        name: User name
+        format : <strong>%s</strong>
+        type: text
+      email:
+        id: email
+        name: Email
+        format : '<a href="mailto:%s">%s</a>'
+        type: text
+      admin:
+        id: admin
+        name: Admin
+        description: Administrator user
+        type: checkbox
+        value: 1
+      password:
+        id: password
+        name: Password
+        type: password
+  rubriques: 
+    type: separator 
+    name: Sections
+    description:        
   contacts:
     type: module
     name: Contacts
@@ -162,7 +162,7 @@ pages:
     filter: 
     order: date
     per_page: 
-    description: Demandes de contact via le site
+    description: Emails received via contact form
     fields: 
       subject: 
         id: subject
