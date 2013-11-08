@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $config['site_title'];?></title>
-    <base href="/Public/backoff/frontend/"></base>
+    <base href="<?php echo $config['base_url'];?>"></base>
     <meta name="keywords" content="<?php echo $config['site_keywords'];?>" />
     <meta name="description" content="<?php echo $config['site_description'];?>" />
     <link href="bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet" />

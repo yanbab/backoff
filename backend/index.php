@@ -6,7 +6,7 @@
 include '../config.php';
 
 define('LIBRARY_PATH', dirname(__FILE__) . '/library/');
-define('SITE_PATH', '../');
+define('SITE_PATH', '../frontend/');
 define('PLUGINS_PATH', 'plugins/');
 define('VERSION', '0.1');
 define('DEBUG', true);
@@ -27,6 +27,7 @@ if($_SESSION['_SCHEMA_CACHE_TIME'] != filemtime('config/config.schema.yml')||iss
 }
 $_SCHEMA = $_SESSION['_SCHEMA'];
 
+
 // Library
 require LIBRARY_PATH . '/db.php';
 require LIBRARY_PATH . '/url.php';
@@ -36,7 +37,6 @@ require LIBRARY_PATH . '/log.php';
 require LIBRARY_PATH . '/plugin.php';
 
 // Plugins
-
 plugin_load(plugin_list());
 
 // Routing

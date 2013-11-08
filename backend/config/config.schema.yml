@@ -1,14 +1,14 @@
 title: Backoff Admin
 theme: tunes
 lang: en
-auth: db
+auth: db 
 auth_param:
   table: users
   username: username
   password: password
   admin: admin
   encrypt: md5
-content: 
+pages: 
   title: 
     type: separator 
     name: Content

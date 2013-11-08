@@ -19,6 +19,10 @@ while($cfg = db_fetch($query)) {
     $config[$cfg['key']] = $cfg['value'];
 }
 
+// Site  url
+$config['base_url'] = '/Public/backoff/frontend/';
+
+
 // Pages
 $pages = db_get("SELECT pages.*, pages_modules.module FROM pages, pages_modules WHERE pages.id_module = pages_modules.id ORDER BY position, id  ");
 $page = db_fetch(db_query("SELECT pages.*, pages_modules.module FROM pages, pages_modules WHERE pages.id_module = pages_modules.id AND  url = '{$_REQUEST['segments'][0]}' "));

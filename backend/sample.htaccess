@@ -22,3 +22,6 @@ ExpiresActive On
   ExpiresDefault "access plus 1 day"
 </FilesMatch>
 
+# Allow php short tag
+# fails on some servers (gandi)
+# php_value short_open_tag 1
