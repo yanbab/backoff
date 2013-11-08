@@ -1,4 +1,4 @@
-# backoff
+# Backoff
 
 Backoff is a php+mysql application for generating administration style interfaces.
 
