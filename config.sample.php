@@ -13,7 +13,7 @@ $_CONFIG['db']['pass'] = 'admin';
 
 // Site location
 // Also change in .htaccess
-$_CONFIG['site']['url'] = '/backoff/';
+$_CONFIG['site']['url'] = '/backoff/frontend';
 
 
 // Email
