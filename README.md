@@ -29,7 +29,7 @@ It makes it simple for developers to implement beautiful and elegant interfaces 
 	* rename frontend/sample.htaccess to frontend/.htaccess
 
 **Notes**
-
+  
 * "php short tags" should be enabled (via .htaccess or php.ini)
 
 ## Using backend
