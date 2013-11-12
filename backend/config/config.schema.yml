@@ -33,7 +33,7 @@ pages:
             field: name
       url: 
         id: url
-        name: Adresse de la page
+        name: Page URL address
         type: text
         description : alphanumeric only. Leave empty for home page.
         attributes:

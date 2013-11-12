@@ -113,7 +113,7 @@
           <?php foreach($pages as $p) : ?>
             <?php if($p['status']) : ?>
               <li  <?php if($p['url']==$page['url']): ?>class="active"<?php endif;?> ><a href="<?=$_CONFIG['site']['url']?>/<?=$p['url']?>"><?echo $p['name'];?></a></li>
-          <?php endif ; ?>        
+          <?php endif ; ?>
         <?php endforeach; ?>  
         </ul>
         <h3 class="text-muted"><?=$config['site_title'];?></h3>

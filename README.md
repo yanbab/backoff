@@ -47,6 +47,24 @@ Change *url_suffix* in [config.php](https://github.com/yanbab/backoff/blob/maste
 
 You can customize every aspect of the backend via a simple [YAML](http://fr.wikipedia.org/wiki/YAML) config file : [backend/config/schema.yml](https://github.com/yanbab/backoff/blob/master/backend/config/config.schema.yml)
 
+** Fields type **
+
+* Checkbox (checkbox)
+* Color chooser (color)
+* Date picker	(date)
+* Date and time picker	(datetime)
+* File Upload	(file)
+* Newsletter	(newsletter)
+* Number	(number)
+* Order	(order)
+* Password	(password)
+* Number	(percent)
+* Rich text	(richtext)
+* Choice	(select)
+* Multiple choice	(selectmultiple)
+* Text line	(text)
+* Text	(textarea)
+
 ## Customize frontend
 
 The frontend is really a simple sample, you can use your framework of choice to build the frontend the way you like. 
