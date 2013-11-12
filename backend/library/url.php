@@ -22,53 +22,64 @@
 
 
 function url_site($segments='') {
-// Returns your site URL
-// Segments can be optionally passed to the function as a string or an array.
-// Here is a string example:
-//  echo url_site("news/local/123");
-// The above example would return something like:
-//  http://www.your-site.com/index.php/news/local/123
 
-  return url_base() . ltrim($segments,'/');
+	// Returns your site URL
+	// Segments can be optionally passed to the function as a string or an array.
+	// Here is a string example:
+	//  echo url_site("news/local/123");
+	// The above example would return something like:
+	//  http://www.your-site.com/index.php/news/local/123
+
+	return url_base() . ltrim($segments,'/');	
 
 }
 
 function url_base($segments='') {
-// Returns your site base URL, example :
-//  echo url_base();
-// The above example would return something like:
-//  http://www.your-site.com/
-//  or /
 
-  return dirname($_SERVER['SCRIPT_NAME']) . '/';
+	// Returns your site base URL, example :
+	//  echo url_base();
+	// The above example would return something like:
+	//  http://www.your-site.com/
+	//  or /
+
+	global $_CONFIG;
+
+	$url =  dirname($_SERVER['SCRIPT_NAME']) . '/';
+	if($_CONFIG['site']['index_page']) {
+		$url .= $_CONFIG['site']['index_page'] . '/';
+	}
+	return $url;
+
 }
 
 
 function url_segment($n) {
-// Permits you to retrieve a specific segment of the current url. 
-// Where n is the segment number you wish to retrieve. 
-// Segments are numbered from left to right. 
-// For example, if your full URL is this:
-//  http://www.your-site.com/index.php/news/local/metro/crime_is_up
-// The segment numbers would be this:
-//  1. news
-//  2. local
-//  3. metro
-//  4. crime_is_up
-// the function returns FALSE (boolean) if the segment does not exist.
 
-  $segments = explode('/',$_SERVER['PATH_INFO']);
-  return $segments[$n];
+	// Permits you to retrieve a specific segment of the current url. 
+	// Where n is the segment number you wish to retrieve. 
+	// Segments are numbered from left to right. 
+	// For example, if your full URL is this:
+	//  http://www.your-site.com/index.php/news/local/metro/crime_is_up
+	// The segment numbers would be this:
+	//  1. news
+	//  2. local
+	//  3. metro
+	//  4. crime_is_up
+	// the function returns FALSE (boolean) if the segment does not exist.
+
+	$segments = explode('/',$_SERVER['PATH_INFO']);
+	return $segments[$n];
 
 }
 
 
 function url_redirect($segments='') {
-// Does a "header redirect" to the local URI specified. 
-// Segments can be optionally passed to the function as a string or an array.
+	
+	// Does a "header redirect" to the local URI specified. 
+	// Segments can be optionally passed to the function as a string or an array.
 
-  $location = url_site($segments);
-  header("Location: $location");
+	$location = url_site($segments);
+	header("Location: $location");
   
 }
 

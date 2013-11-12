@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $config['site_title'];?></title>
-    <base href="<?php echo $_CONFIG['site']['url'];?>"></base>
+    <base href="<?php echo $_CONFIG['site']['base_url'];?>"></base>
     <meta name="keywords" content="<?php echo $config['site_keywords'];?>" />
     <meta name="description" content="<?php echo $config['site_description'];?>" />
     <link href="bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet" />
@@ -112,7 +112,7 @@
         <ul class="nav nav-pills pull-right">
           <?php foreach($pages as $p) : ?>
             <?php if($p['status']) : ?>
-              <li  <?php if($p['url']==$page['url']): ?>class="active"<?php endif;?> ><a href="./<?=$p['url']?>"><?echo $p['name'];?></a></li>
+              <li  <?php if($p['url']==$page['url']): ?>class="active"<?php endif;?> ><a href="<?=$_CONFIG['site']['url']?>/<?=$p['url']?>"><?echo $p['name'];?></a></li>
           <?php endif ; ?>        
         <?php endforeach; ?>  
         </ul>

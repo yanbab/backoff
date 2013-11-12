@@ -22,6 +22,10 @@ while($cfg = db_fetch($query)) {
 
 // Site location
 $_CONFIG['site']['url'] = dirname($_SERVER['SCRIPT_NAME']) . '/';
+$_CONFIG['site']['base_url'] = $_CONFIG['site']['url'] . '/';
+if($_CONFIG['site']['index_page']) {
+	$_CONFIG['site']['url'] .= $_CONFIG['site']['index_page'] . '/';
+}
 
 // Pages
 $pages = db_get("SELECT pages.*, pages_modules.module FROM pages, pages_modules WHERE pages.id_module = pages_modules.id ORDER BY position, id  ");

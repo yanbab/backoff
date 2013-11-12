@@ -3,23 +3,23 @@
 <head>
     <title><?=$_SCHEMA['title']?><?=$sub_title?></title>
     <meta http-equiv="Content-Type"  content="text/html; charset=UTF-8" />
-    <base href="http://<?=$_SERVER[HTTP_HOST]?><?=url_base();?>" />
+    <base href="http://<?=$_SERVER[HTTP_HOST]?><?=$url_base?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_screen.css" type="text/css" media="screen" />  
-    <link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_print.css" type="text/css" media="print" />
+    <link rel="icon" href="themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_screen.css" type="text/css" media="screen" />  
+    <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_print.css" type="text/css" media="print" />
     <!--[if lt IE 7]>
-    <link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_ie.css" type="text/css">
+    <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_ie.css" type="text/css">
     <![endif]-->
     <style type="text/css" >
         #wrap { font-size :<?=$_CONFIG['size']?>%; }
     </style>
-    <script src="<?=url_base();?>modules/index/jquery-1.3.min.js" type="text/javascript"></script>  
-    <script src="<?=url_base();?>modules/index/jquery.cookie.min.js" type="text/javascript"></script>  
-    <script src="<?=url_base();?>modules/index/index.js" type="text/javascript"></script>  
+    <script src="modules/index/jquery-1.3.min.js" type="text/javascript"></script>  
+    <script src="modules/index/jquery.cookie.min.js" type="text/javascript"></script>  
+    <script src="modules/index/index.js" type="text/javascript"></script>  
 <?php if(file_exists("themes/$_CONFIG[theme]/theme.js")) : ?>
-    <script src="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/theme.js" type="text/javascript"></script> 
+    <script src="themes/<?=$_CONFIG['theme']?>/theme.js" type="text/javascript"></script> 
 <?php endif; ?>     
 </head>
 
