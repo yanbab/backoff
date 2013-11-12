@@ -15,7 +15,7 @@ $_CONFIG['email_from_name'] = 'no reply';
 $_CONFIG['email_from'] = 'webmaster@test.com';
 
 // URL rewriting
-$_CONFIG['site']['index_page'] = ''; // leave empty if url rewriting is on
+$_CONFIG['site']['index_page'] = 'index.php'; // leave empty if url rewriting is on
 
 // Time zone
 date_default_timezone_set('UTC');
