@@ -13,9 +13,9 @@
     <link rel="shortcut icon" href="backend/themes/tunes/images/favicon.ico" type="image/x-icon" />
     <style type="text/css">
         body {
-            background : #f0F0F0;
-            margin:40px;
+            background : #fff;
             color : #666;
+            margin:10px;
         }
 
         .starter-template {
@@ -24,25 +24,20 @@
         }
 
         .btn {
-          border-radius:3px;
+          border-radius:2px;
+          margin:.5em;
         }
         .btn-default {
             background: #eee;
         }
 
-        .container {
-          margin:0 auto;
-          max-width:680px;
-          padding:40px;
-          box-shadow: 0px 0px 10px #aaa;
 
-          border-radius:2px;
-          background:white;
-        }
         .starter-template h1
          {
           font-size:32px;
           font-family: times,serif;
+          margin:0;
+          letter-spacing: 2px;
         }
         
         .starter-template .lead {
@@ -52,10 +47,47 @@
           margin-right: 10px;
           margin-top:-10px;
         }
-
+        .lead {
+            letter-spacing: 2px
+        }
+        .doc { 
+          min-height : 1000px;
+        }
         .doc h1, .doc h2 {
           font-size:20px;
         }
+
+        .doc h2 {
+          border-bottom:solid #ddd 1px;
+          padding-bottom:10px;
+          margin-bottom: 10px;
+        }
+
+        .doc img {
+          border: solid #aaa 1px;
+        }
+        @media screen and (min-width: 500px) {
+          .container {
+            margin:0 auto;
+            max-width:680px;
+            padding:40px;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius:2px;
+            background:white;
+          }
+          body {
+            background : #f0F0F0;
+            margin:40px;
+          }
+        }
+        @media screen and (max-width: 770px) {
+          img {
+            max-width:100%;
+          }
+
+        }
+
+
  </style>
 </head>
 
@@ -68,33 +100,20 @@
         <h1><img src="backend/themes/tunes/images/backoff.png" width="32" height="32" alt="">BackOff</h1>
         <p class="lead">Admin generator</p>
         <p>
-           <a href="backend/" class="btn btn-primary">Backend demo</a> &nbsp; &nbsp; <a href="frontend/" class="btn btn-primary">Frontend demo</a>
+           <a href="backend/" class="btn btn-primary">Backend Demo</a>
+             
+           <a href="frontend/" class="btn btn-primary">Frontend Demo</a>
         </p>
         <p>
            <i class="glyphicon glyphicon-lock"></i> login : <em>admin</em> | password : <em>admin</em>
         </p>
         <p>
-           <a href="https://github.com/yanbab/backoff" class="btn btn-default">Source code</a>
+           <a href="https://github.com/yanbab/backoff/archive/master.zip" class="btn btn-default"><i class="glyphicon glyphicon-download-alt"></i> Download</a>
+           
+           <a href="https://github.com/yanbab/backoff" class="btn btn-default">Source Code</a>
        </p>
     </div>
-    
-    <div class="doc">
-      <h1>Screenshots</h1>
-      <p>
-          Nice, easy to use interface
-          <img src="frontend/files/screenshots/shot1.png" width="600" height="300">
-      </p>
-      <p>
-          Themes support<br>
-          <img src="frontend/files/screenshots/shot2.png" width="600" height="300">
-      </p>
-      <p>
-          Complex data editing
-          <img src="frontend/files/screenshots/shot3.png" width="600" height="300">
-      </p>
 
-
-    </div>
     <div class="doc" ng-bind-html-unsafe="doc">Loading...</div>
     
 </div><!-- /.container -->
