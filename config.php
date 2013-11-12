@@ -9,12 +9,6 @@ $_CONFIG['db']['base'] = 'backoff';
 $_CONFIG['db']['user'] = 'root';
 $_CONFIG['db']['pass'] = 'admin';
 
-
-// Site location
-// Also change in .htaccess
-$_CONFIG['site']['url'] = '/Public/backoff/frontend/';
-
-
 // Email
 $_CONFIG['email_from_name'] = "no reply";
 $_CONFIG['email_from'] = "webmaster@test.com";

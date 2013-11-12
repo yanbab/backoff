@@ -1,27 +1,9 @@
 
-#
-# Hide 'index.php' from url
-# Redirect everthing that doesn't exists to index.php
-#
-
+# Rewrite URLs
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
-#RewriteBase /admin/
 
-#Options -Indexes 
-
-#<FilesMatch "^(config|lang|library|log|modules|plugins|themes)\.(php|yml)$">
-#  Order deny,allow
-#  Deny from all
-#</FilesMatch>
-
-ExpiresActive On
-<FilesMatch "\.(ico|gif|jpe?g|png|js|css)$">
-  ExpiresDefault "access plus 1 day"
-</FilesMatch>
-
-# Allow php short tag
-# fails on some servers (gandi)
+# Allow php short tag - fails on some servers
 php_value short_open_tag 1

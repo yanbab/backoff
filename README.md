@@ -1,10 +1,8 @@
 # Backoff
 
-Backoff is a php+mysql application for generating administration style interfaces.
+Backoff is a PHP/MySQL application for generating web site administration interfaces.
 
-It abstracts common business application patterns to make it simple for developers to implement beautiful and elegant interfaces with very little effort.
-
-It provides an easy to use interface for your client to manage their website.
+It makes it simple for developers to implement beautiful and elegant interfaces with very little effort while providing clients an easy to use interface to manage their website.
 
 
 ## Installation
@@ -17,20 +15,18 @@ It provides an easy to use interface for your client to manage their website.
 
 **Requirement**
 
-* php4+ 
-* mysql
+* PHP 4+ 
+* MySQL
 
 **Setup**
 
 * Extract folder somewhere in your web server
 * change database settings in [config.php](https://github.com/yanbab/backoff/blob/master/config.php)
-* Create a database, via phpmyadmin or command line
- mysql> CREATE DATABASE backoff
-* Fil database with [backend/config/config.sql](https://github.com/yanbab/backoff/blob/master/backend/config/config.sql)
+* Create a database, via phpmyadmin or command line (mysql> CREATE DATABASE backoff)
+* Fil database with [backend/config/config.sql](https://github.com/yanbab/backoff/blob/master/backend/config/config.schema.yml)
 * for URL rewrinting :
 	* rename backend/sample.htaccess to backend/.htaccess 
 	* rename frontend/sample.htaccess to frontend/.htaccess
-	* edit them to fill correct location
 
 **Notes**
 
