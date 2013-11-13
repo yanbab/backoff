@@ -1,6 +1,4 @@
-# Backoff documentation
-
-Backoff is a PHP/MySQL application for generating web site administration interfaces.
+**BackOff** is a PHP/MySQL application for generating web site administration interfaces.
 
 It makes it simple for developers to implement beautiful and elegant interfaces with very little effort, while providing clients an easy to use interface to manage their website.
 
@@ -25,8 +23,8 @@ Themes support
 
 **Download**
 
+* Zip archive : **[master.zip](https://github.com/yanbab/backoff/archive/master.zip)**
 * GIT : *git clone https://github.com/yanbab/backoff.git*
-* Zip archive : *[master.zip](https://github.com/yanbab/backoff/archive/master.zip)*
 
 **Requirement**
 
@@ -37,10 +35,10 @@ Themes support
 
 * Extract folder somewhere in your web server
 * Create a database, via phpmyadmin or command line *(mysql> CREATE DATABASE backoff)*
-* Fil database with [backend/config/config.sql](https://github.com/yanbab/backoff/blob/master/backend/config/config.schema.yml)
+* Fill database with [backend/config/config.sql](https://github.com/yanbab/backoff/blob/master/backend/config/config.schema.yml)
 * Change database settings in [config.php](https://github.com/yanbab/backoff/blob/master/config.php)
 
-** Optional : Remove index.php from URLs **
+**Optional : Remove index.php from URLs**
 
 Create frontend/.htaccess and backend/.htaccess with the following content :   
 
@@ -51,9 +49,9 @@ Create frontend/.htaccess and backend/.htaccess with the following content :
       RewriteRule ^(.*)$ /index.php/$1 [L]
     </IfModule>
 
-Change *url_suffix* in [config.php](https://github.com/yanbab/backoff/blob/master/config.php) from 'index.php' to '' :
+Change 'url_suffix' in [config.php](https://github.com/yanbab/backoff/blob/master/config.php) from 'index.php' to '' :
 
-  $_CONFIG['site']['url_suffix'] = '';
+    $_CONFIG['site']['url_suffix'] = '';
 
 **Notes**
   
@@ -83,7 +81,7 @@ You can customize every aspect of the backend via a simple [YAML](http://fr.wiki
 
 ## Extend backend
 
-** Plugins **
+**Plugins**
 
 You can write custom fields types, called plugins. 
 
@@ -91,20 +89,19 @@ To create a simple email input file with html5 validation, create the file plugi
 
     class emailPlugin extends Plugin {
         const description = "Email field";
-            function getHtml($field,$value='') {
-                // Edit mode
-                return "<input type=\"email\" required value=\"{$value}\">";
-            }
-            function prepForDisplay($field, $value = '') {
-                // List mode
-                return "<a href=\"mailto:{$value}\">{$value}</a>";
-            }
+        function getHtml($field,$value='') {
+            // Edit mode
+            return "<input type=\"email\" required value=\"{$value}\">";
+        }
+        function prepForDisplay($field, $value = '') {
+            // List mode
+            return "<a href=\"mailto:{$value}\">{$value}</a>";
+        }
     }
 
-That's it.
 
 ## Customize frontend
 
-The frontend is really a simple sample, you can use your framework of choice to build the frontend the way you like. The database acts as a data gateway with the backend.
+The frontend is really a simple sample, you can use your framework of choice to build the frontend the way you like. The database acts as a data gateway between the backend and your frontend.
 
 
