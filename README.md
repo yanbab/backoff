@@ -35,7 +35,7 @@ Themes support
 
 * Extract folder somewhere in your web server
 * Create a database, via phpmyadmin or command line *(mysql> CREATE DATABASE backoff)*
-* Fill database with [backend/config/config.sql](https://github.com/yanbab/backoff/blob/master/backend/config/config.schema.yml)
+* Fill database with [backoff.sql](https://github.com/yanbab/backoff/blob/master/backoff.sql)
 * Change database settings in [config.php](https://github.com/yanbab/backoff/blob/master/config.php)
 
 **Optional : Remove index.php from URLs**
