@@ -8,19 +8,14 @@ class checkboxPlugin extends Plugin {
     const description = "Checkbox";  
 
     function getHtml($field,$value='') {
-
 	    if($value) {
 		    $field['attributes']['checked'] = 'checked';
-//		    $value  = 'on';
 	    }
-	
 	    $field['attributes']['type'] = 'checkbox';
 	    $field['attributes']['name']  = $field['id'];
 	    $field['attributes']['style']  .= 'float:left;margin-right : 6px;';
 	    $value  = 'on';
-
-        return parent::getHtml($field, $value);
-
+      return parent::getHtml($field, $value);
   }
   
   function prepForDisplay($field,$value='') {   

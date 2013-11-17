@@ -30,11 +30,18 @@ function url_site($segments='') {
 	// The above example would return something like:
 	//  http://www.your-site.com/index.php/news/local/123
 
-	return url_base() . ltrim($segments,'/');	
+	global $_CONFIG;
 
+	$url = url_base();
+	if($_CONFIG['site']['index_page']) {
+		$url .= $_CONFIG['site']['index_page'] . '/';
+	}
+	$url .=  ltrim($segments,'/');
+	return $url;
+	
 }
 
-function url_base($segments='') {
+function url_base() {
 
 	// Returns your site base URL, example :
 	//  echo url_base();
@@ -42,12 +49,7 @@ function url_base($segments='') {
 	//  http://www.your-site.com/
 	//  or /
 
-	global $_CONFIG;
-
 	$url =  dirname($_SERVER['SCRIPT_NAME']) . '/';
-	if($_CONFIG['site']['index_page']) {
-		$url .= $_CONFIG['site']['index_page'] . '/';
-	}
 	return $url;
 
 }

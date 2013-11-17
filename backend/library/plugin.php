@@ -40,6 +40,7 @@ function plugin_list() {
 class Plugin {
 
     const prefix = 'bo_'; // needs works in edit module
+
     const description = 'Base plugin';
 
     function getHtml($field,$value='') {
@@ -53,9 +54,6 @@ class Plugin {
         } else {
             $field['attributes']['type'] = 'text';
         }
-
-        
-
         $value = '<input  ' . Plugin::_getAttrString($field['attributes']) . ' >';
         if($field['format_edit']) {
             $value = sprintf($field['format_edit'],$value,$value,$value);
@@ -99,35 +97,13 @@ class Plugin {
     // Action Hooks
     //
 
-    function preInsertHook () {
+    function onUpdate($field) {
+
     }
 
-    function postInsertHook () {
+    function onDelete($field) {
     }
 
-    function preUpdateHook () {
-    }
-
-    function postUpdateHook () {
-    }
-
-    function preDeleteHook () {
-    }
-
-    function postDeleteHook () {
-    }
-
-    //
-    // Search Hooks
-    //
-
-    function getSearchField($field) {
-    
-    }
-
-    function getSearchSql($field) {
-    
-    }
 
 
     //
