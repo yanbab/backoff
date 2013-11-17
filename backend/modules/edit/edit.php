@@ -40,7 +40,7 @@ switch($_POST['action']) {
       // INSERT NEW RECORD
       $sql= "INSERT INTO $table (id) VALUES ('');";
       db_query($sql);
-      log_write("INSERT (" . substr($sql,0,20). "...)");
+      log_write("INSERT (" . substr($sql, 0, 30). "...)");
       $_POST['id'] = db_insert_id();
     }
     
@@ -50,16 +50,16 @@ switch($_POST['action']) {
     foreach($fields as $fieldname => $field) {
       call_user_func(array( $field['type'] . "Plugin", preUpdateHook),$field,$_POST[$fieldname]);
     }
-    $query = "UPDATE $table SET ";
+    $sql = "UPDATE $table SET ";
     // prep for db
     foreach($fields as $fieldname => $field) {
       $value = call_user_func(array( $field['type']. "Plugin", prepForDB),$field,$_POST[Plugin::prefix . $fieldname]);
-      $query .= $query_sep . "`$fieldname`" . "='" . $value . "'";
+      $sql .= $query_sep . "`$fieldname`" . "='" . $value . "'";
       $query_sep = ', ';
     }
-    $query .= " WHERE id='$_POST[id]'";
-    db_query($query);
-    log_write("UPDATE (" . substr($sql,0,20). ")");
+    $sql .= " WHERE id='$_POST[id]'";
+    db_query($sql);
+    log_write("UPDATE (" . substr($sql, 0, 30). ")");
     if(!$errors) 
     url_redirect("/list/$page/?$_SERVER[QUERY_STRING]");
   break;
@@ -69,8 +69,9 @@ switch($_POST['action']) {
   case 'delete' : 
     $sql = "DELETE FROM $table WHERE id='$_POST[id]'";
     db_query($sql);
-    log_write("DELETE ($sql)");
+    log_write("DELETE (" . substr($sql, 0, 30). "...)");
     url_redirect("/list/$page/?$_SERVER[QUERY_STRING]");
+
 }
 
 // Load data

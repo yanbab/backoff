@@ -7,12 +7,12 @@ $_LOGFILE = "log/access.log";
 
 function log_write($msg) {
   global $_LOGFILE,$_SESSION;
-  if ($handle = @fopen($_LOGFILE,'a')) {
+  if (isset($_CONFIG['site']['log']) && $_CONFIG['site']['log'] && $handle = @fopen($_LOGFILE, 'a')) {
     $date = date("Y-m-d H:i:s");
     $user = "$_SESSION[auth]";
     $ip = $_SERVER['REMOTE_ADDR'];
     $uri = $_SERVER['REQUEST_URI'];
-    $line = "$date\t$user\t$msg\t$uri\t$ip\n";
+    $line = "$date\tuser:$user\turi:$uri\tip:$ip\tmsg:$msg\n";
     fwrite ($handle, $line);
     fclose($handle);
   }
