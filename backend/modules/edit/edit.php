@@ -40,7 +40,7 @@ switch($_POST['action']) {
       // INSERT NEW RECORD
       $sql= "INSERT INTO $table (id) VALUES ('');";
       db_query($sql);
-      log_write("INSERT ($sql)");
+      log_write("INSERT (" . substr($sql,0,20). "...)");
       $_POST['id'] = db_insert_id();
     }
     
@@ -59,7 +59,7 @@ switch($_POST['action']) {
     }
     $query .= " WHERE id='$_POST[id]'";
     db_query($query);
-    log_write("UPDATE ($query)");
+    log_write("UPDATE (" . substr($sql,0,20). ")");
     //echo "<pre>";
     //print_r($_POST);
     //echo $query;exit();
