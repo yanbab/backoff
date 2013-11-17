@@ -17,7 +17,6 @@ function  paging($base_url,$total,$per_page,$cur_page,$show='3') {
   $start = max(1,$cur_page - $show - max(0,$show-$cur_page));
   $end = min ($maxPage,$cur_page + $show + max(0,$show-$cur_page)  );
   
-  
   // previous
   
   if($cur_page>1&&$maxPage>1) {

@@ -1,5 +1,5 @@
 <?php
-require_once LIBRARY_PATH . 'paging.php';
+require_once LIBRARY_PATH . 'pagination.php';
 
 $page = url_segment(2);
 $action= url_segment(3);
@@ -112,7 +112,7 @@ if(isset($schema['where'])) {
 // ORDER clause
 //
 
-if(isset($_GET['order'])) {
+if(isset($_GET['order']) && $_GET['order']) {
     $ORDER =  " ORDER BY `$_GET[order]`";
     if($_GET['direction']) {
         $ORDER .= " $_GET[direction] ";

@@ -1,0 +1,7 @@
+@import url(../bower_components/bootstrap-css/css/bootstrap.min.css);
+@import url(style.css);
+
+body {
+	max-width: 900px;
+	border: 20px;
+}

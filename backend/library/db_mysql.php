@@ -28,7 +28,7 @@ function db_query($sql) {
     if($query = mysql_query($sql)) {
     	return $query;
     } else {
-    	db_error("Can't perform query :$sql");
+    	db_error("Can't perform query : $sql");
     }
 }
 

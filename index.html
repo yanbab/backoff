@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
     <title>Backoff</title>
     <link href="frontend/bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet">
-    <link href="frontend/bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="backend/themes/tunes/images/favicon.ico" type="image/x-icon" />
     <style type="text/css">
         body {
@@ -17,12 +16,10 @@
             color : #666;
             margin:10px;
         }
-
         .starter-template {
             text-align: center;
             margin-bottom: 40px;
         }
-
         .btn {
           border-radius:2px;
           margin:.5em;
@@ -30,8 +27,6 @@
         .btn-default {
             background: #eee;
         }
-
-
         .starter-template h1
          {
           font-size:32px;
@@ -86,8 +81,6 @@
           }
 
         }
-
-
  </style>
 </head>
 
@@ -131,7 +124,7 @@
          console.log(data)
       }).
       error(function(data, status, headers, config) {
-        $scope.data.doc = "Cant't fetch doc"
+        $scope.data.doc = "Cant't fetch documentation from GitHub :("
       });
   }
 </script>

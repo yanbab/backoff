@@ -61,8 +61,8 @@ pages:
         type: richtext
         edit_only : true
         options:
-          width: 800px
-          css: "../frontend/bower_components/bootstrap-css/css/bootstrap.min.css"
+          width: 100%
+          css: "../frontend/styles/admin.css"
   galery:
     name: Images
     table: galery
@@ -103,12 +103,13 @@ pages:
         id: status
         name: Publish
         type: checkbox
-        description : Publish picture
+        description: Publish picture
         value: checked
   config:
-    name : Settings
+    name: Settings
     table:config
-    no_delete : true
+    no_delet: true
+    no_create: true
     fields:
       name:
         id: name
@@ -127,18 +128,18 @@ pages:
         name: Value
         type: textarea
   users:
-    name : Users
+    name: Users
     table: users
     fields:
       username:
         id: username
         name: User name
-        format : <strong>%s</strong>
+        format: <strong>%s</strong>
         type: text
       email:
         id: email
         name: Email
-        format : '<a href="mailto:%s">%s</a>'
+        format: '<a href="mailto:%s">%s</a>'
         type: text
       admin:
         id: admin

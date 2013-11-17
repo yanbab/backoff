@@ -482,7 +482,7 @@ table.list a:hover {
 .pagination {
   margin-right : 1em;
 }
-.pagination a,.pagination span.current ,.pagination span.disabled {
+.pagination a,.pagination span {
   display : block;
   float : left;
   line-height : 2em;
@@ -492,14 +492,6 @@ table.list a:hover {
 .pagination a {
   color :#204A87
 }
-.pagination span.current {
-
-}
-.pagination span.disabled {
-  
-}
-
-
 
 /* form*/
 
