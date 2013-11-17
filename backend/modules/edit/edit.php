@@ -40,7 +40,7 @@ switch($_POST['action']) {
       // INSERT NEW RECORD
       $sql= "INSERT INTO $table (id) VALUES ('');";
       db_query($sql);
-      log_write("INSERT (" . substr($sql, 0, 30). "...)");
+      log_write("INSERT (" . substr($sql, 0, 40). "...)");
       $_POST['id'] = db_insert_id();
     }
     
@@ -59,7 +59,7 @@ switch($_POST['action']) {
     }
     $sql .= " WHERE id='$_POST[id]'";
     db_query($sql);
-    log_write("UPDATE (" . substr($sql, 0, 30). ")");
+    log_write("UPDATE (" . substr($sql, 0, 40). "...)");
     if(!$errors) 
     url_redirect("/list/$page/?$_SERVER[QUERY_STRING]");
   break;
@@ -69,7 +69,7 @@ switch($_POST['action']) {
   case 'delete' : 
     $sql = "DELETE FROM $table WHERE id='$_POST[id]'";
     db_query($sql);
-    log_write("DELETE (" . substr($sql, 0, 30). "...)");
+    log_write("DELETE (" . substr($sql, 0, 40). "...)");
     url_redirect("/list/$page/?$_SERVER[QUERY_STRING]");
 
 }

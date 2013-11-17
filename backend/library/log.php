@@ -6,7 +6,7 @@
 $_LOGFILE = "log/access.log";
 
 function log_write($msg) {
-  global $_LOGFILE,$_SESSION;
+  global $_LOGFILE, $_SESSION, $_CONFIG;
   if (isset($_CONFIG['site']['log']) && $_CONFIG['site']['log'] && $handle = @fopen($_LOGFILE, 'a')) {
     $date = date("Y-m-d H:i:s");
     $user = "$_SESSION[auth]";
@@ -19,14 +19,14 @@ function log_write($msg) {
 }
 
 function log_read($nb = 1000,$start=0) {
-  global $_LOGFILE,$_SESSION;
+  global $_LOGFILE, $_SESSION;
   $handle = fopen($_LOGFILE, "r");
   $array = array();
   if ($handle) {
       $cpt=1;
       while (!feof($handle)) {
-        $buffer = explode("\t",fgets($handle, 4096));
-        $array[] = array_merge(array($cpt),$buffer);
+        $buffer = explode("\t", fgets($handle, 4096));
+        $array[] = array_merge(array($cpt), $buffer);
         ++$cpt;               
       }
       fclose($handle);
