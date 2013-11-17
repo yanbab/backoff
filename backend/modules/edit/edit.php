@@ -60,9 +60,6 @@ switch($_POST['action']) {
     $query .= " WHERE id='$_POST[id]'";
     db_query($query);
     log_write("UPDATE (" . substr($sql,0,20). ")");
-    //echo "<pre>";
-    //print_r($_POST);
-    //echo $query;exit();
     if(!$errors) 
     url_redirect("/list/$page/?$_SERVER[QUERY_STRING]");
   break;
