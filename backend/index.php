@@ -16,6 +16,7 @@ define('DEBUG', false);
 error_reporting(E_ALL ^ E_NOTICE);
 set_error_handler(function(){});
 
+// Start Session
 session_start();
 
 // Load & cache Schema file

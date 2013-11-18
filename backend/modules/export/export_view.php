@@ -1,27 +1,18 @@
 
 <div id="toolbar">
-  <div class="right">
-
-  </div>
-  <h2 class=left><?=$_SCHEMA['pages'][$table]['name']?></h2>
-  
-  
-  
-  <?=lang('Export data');?>
-   <div class="left">
-   <small>
-   </small></div>
-
+    <h2 class=left><?=$_SCHEMA['pages'][$table]['name']?></h2>
+    <?=lang('Export data');?>
 </div>
+
+
 <div id="main">
   <table class="edit" >
   <tr>
-    <td><?=lang('Copy the data below and paste it in your document.');?></td>
+    <td><?=lang('Copy the data below and paste it in your spreadsheet');?></td>
   </tr>
   <tr>
     <td><textarea id="export_field" style="width:400px; height : 200px;" wrap="off"><?=$data?></textarea></td>
   </tr>  
-  
 <!--  
   <tr><td>
   
@@ -31,11 +22,8 @@
       <li><a href="<?=url_site("/export/$page/xls/")?>">export_<?=$page?>_<?=date("Ymd")?>.xls</a> (Excel)</li>
     </ul>      
   </td></tr>
-  
 -->  
-  
   </table>
-
 </div>
 
 <div id="actionbar">

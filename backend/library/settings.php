@@ -7,6 +7,9 @@
 // FIXME : hardcoded settings
 // FIXME : hardcoded cookie prefix
 // FIXME : avoid function_exists
+// FIXME : only one cookie
+// FIXME : class or function to by used by login.php too and index.php (load_config)
+
 
 if(!function_exists('config_set')) {
   // FIXME : HACK : settings module reread this file
@@ -21,7 +24,6 @@ if(isset($_POST['change_settings'])) {
   $_CONFIG['lang'] = $_POST['lang'];
   $_CONFIG['theme'] = $_POST['theme'];
   $_CONFIG['size'] = $_POST['size'];
-  
   $_CONFIG['login_cookie'] = $_POST['login_cookie'];
 }
 else {
@@ -46,37 +48,32 @@ else {
 // cookie auth
 if(isset($_CONFIG['login_cookie'])) {
 	if($_COOKIE['backoff_auth']) {
-		  $check = false;
-			switch ($_SCHEMA['auth']) {
-				case 'db' :
-				  // FIXME : this is copy/paste from login.php
-				  $table = $_SCHEMA['auth_param']['table'];
-				  $username_field =  $_SCHEMA['auth_param']['username'];
-				  $password_field =  $_SCHEMA['auth_param']['password'];
-				  if($_SCHEMA['auth_param']['admin']) {
-				  	$cond = " AND " . $_SCHEMA['auth_param']['admin'] . "='1' ";
-				  }
-				  $query = db_query("SELECT * FROM $table WHERE $username_field = '$_COOKIE[backoff_auth]'  $cond");
-				  $result = db_fetch($query);
-				  if($result) {
-				    $check = true;
-				  }
-				break;
-				case 'array':
-				
-				  if($_SCHEMA['auth_param'][$_COOKIE[backoff_auth]] ) {
-				    $check = true;
-				  }
-				break;
-			}
-			
-			if($check) {
-				$_SESSION['auth'] = $_COOKIE['backoff_auth']; // OK, sign in
-			}
+  	  $check = false;
+		switch ($_SCHEMA['auth']) {
+			case 'db' :
+				// FIXME : this is copy/paste from login.php
+				$table = $_SCHEMA['auth_param']['table'];
+				$username_field =  $_SCHEMA['auth_param']['username'];
+				$password_field =  $_SCHEMA['auth_param']['password'];
+				if($_SCHEMA['auth_param']['admin']) {
+					$cond = " AND " . $_SCHEMA['auth_param']['admin'] . "='1' ";
+				}
+				$query = db_query("SELECT * FROM $table WHERE $username_field = '{$_COOKIE['backoff_auth']}'  $cond");
+				$result = db_fetch($query);
+				if($result) {
+					$check = true;
+				}
+			break;
+			case 'array':
+				if($_SCHEMA['auth_param'][$_COOKIE['backoff_auth']] ) {
+					$check = true;
+				}
+			break;
+		}
+		if($check) {
+			$_SESSION['auth'] = $_COOKIE['backoff_auth']; // OK, sign in
+		}
 	}
 
 }
-
-
-
 
