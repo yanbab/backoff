@@ -8,6 +8,8 @@
   "license": "MIT",
   "ignore": [],
   "dependencies": {
-    "bootstrap-css": "latest"
+    "bootstrap-css": "3.0.0",
+    "angular": "1.0.8",
+    "markdown": "0.5.0"
   }
 }

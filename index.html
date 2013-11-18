@@ -117,14 +117,13 @@
 <script>
   function MainCtrl ($scope, $http) {
     $scope.doc = "Loading readme.md...";
-    $scope.menu = 'home';
     $http.get('README.md').
       success(function(data, status, headers, config) {
          $scope.doc = markdown.toHTML(data);
-         console.log(data)
+
       }).
       error(function(data, status, headers, config) {
-        $scope.data.doc = "Cant't fetch documentation from GitHub :("
+        $scope.doc = "Cant't fetch documentation from GitHub :("
       });
   }
 </script>

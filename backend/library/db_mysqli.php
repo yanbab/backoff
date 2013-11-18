@@ -21,7 +21,7 @@ function db_query($sql) {
 	global $_db_link;
     $query = mysqli_query($_db_link, $sql);
 
-	if (mysqli_connect_errno($mysqli)) {
+	if (mysqli_connect_errno($_db_link)) {
  	   db_error("Can't perform query");
 	} else {
     	return $query;
