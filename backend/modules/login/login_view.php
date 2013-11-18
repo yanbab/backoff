@@ -7,9 +7,6 @@
 	<link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_screen.css" type="text/css" media="screen" >	
 	<link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_print.css" type="text/css" media="print" >
 	    <link rel="shortcut icon" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
-<!--[if lt IE 7]>
-	<link rel="stylesheet" href="<?=url_base();?>themes/<?=$_CONFIG['theme']?>/css/style_ie.css" type="text/css">
-<![endif]-->
 <style>
 
 .edit {
@@ -67,11 +64,6 @@ li {
 
   </div>
   
-
-<!--[if lte IE 6]>
-<script src="<?=url_base();?>modules/login/ie6-warning/warning.js"></script><script>window.onload=function(){e("<?=url_base();?>modules/login/ie6-warning/")}</script>
-<![endif]-->
-
 <script type="text/javascript">
   document.getElementById('username').focus();
 </script>

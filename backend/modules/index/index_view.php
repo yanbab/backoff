@@ -9,9 +9,6 @@
     <link rel="shortcut icon" href="themes/<?=$_CONFIG['theme']?>/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_screen.css" type="text/css" media="screen" />  
     <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_print.css" type="text/css" media="print" />
-    <!--[if lt IE 7]>
-    <link rel="stylesheet" href="themes/<?=$_CONFIG['theme']?>/css/style_ie.css" type="text/css">
-    <![endif]-->
     <style type="text/css" >
         #wrap { font-size :<?=$_CONFIG['size']?>%; }
     </style>
