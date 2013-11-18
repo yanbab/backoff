@@ -205,6 +205,6 @@ if (!$schema['no_create']) : ?>
 
 </div>
 
-<script src="modules/list/jquery.highlight.js" type="text/javascript"></script>  
-<script src="modules/list/jquery.duplicate-remove.js" type="text/javascript"></script>  
+<script src="assets/scripts/jquery.highlight.js" type="text/javascript"></script>  
+<script src="assets/scripts/jquery.duplicate-remove.js" type="text/javascript"></script>  
 <script src="modules/list/list.js" type="text/javascript"></script>  

@@ -165,7 +165,7 @@ if($action) {
     if($_POST['select_all_search']) {
       $query = db_query ("SELECT id FROM `$table` $WHERE $ORDER");
       
-      
+    
       
       while($result = db_fetch($query)) {
         $records[] = $result[id];
@@ -181,14 +181,14 @@ if($action) {
 //
 // VIEW results
 //
-
 $query = db_query ("SELECT $SELECT FROM `$table` $WHERE $ORDER $LIMIT");
+
 if($query) {
   $lines = array();
   while($result = db_fetch($query)) {
     $lines[] = $result;
   }
 } else {
-  $error = db_error();
+  $error = db_error($query);
 }
 

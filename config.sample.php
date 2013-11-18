@@ -4,7 +4,7 @@
 //
 
 /// Database
-$_CONFIG['db']['type'] = 'mysql'; 
+$_CONFIG['db']['type'] = 'mysqli'; 
 $_CONFIG['db']['host'] = '127.0.0.1';
 $_CONFIG['db']['base'] = 'backoff';
 $_CONFIG['db']['user'] = 'root';

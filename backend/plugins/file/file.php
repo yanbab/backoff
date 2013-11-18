@@ -131,9 +131,8 @@ class filePlugin extends Plugin {
     }
     
     function _humanSize($size) {
-         // Adapted from: http://www.php.net/manual/en/function.filesize.php
         $mod = 1024;
-        $units = explode(' ','o k  m  G  T  P ');
+        $units = explode(' ','b K  M  G  T  P ');
         for ($i = 0; $size > $mod; $i++) {
             $size /= $mod;
         }
