@@ -23,7 +23,7 @@ Themes support
 
 **Download**
 
-* Zip archive : **[master.zip](https://github.com/yanbab/backoff/archive/master.zip)**
+* Zip archive : **[backoff-0.1](https://github.com/yanbab/backoff/archive/0.1.zip)**
 * GIT : *git clone https://github.com/yanbab/backoff.git*
 
 **Requirement**

@@ -126,10 +126,11 @@ if(isset($_GET['order']) && $_GET['order']) {
 // PAGING & LIMIT clause
 //
 
-$cur_page=1;
-if(isset($_GET['page'])) {
-  $cur_page = $_GET['page'];
-};
+if(isset($_GET['page']) && $_GET['page']) {
+  $cur_page = max(0, $_GET['page']);
+} else {
+  $cur_page=1;
+}
 
 ($_CONFIG['results']) ?  $per_page = $_CONFIG['results'] : $per_page = 10;
 
